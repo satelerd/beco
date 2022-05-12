@@ -1,60 +1,70 @@
 <!DOCTYPE HTML>
 <html>
-<link rel="stylesheet" href="app.css">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Beco</title>
-
-    <!-- Insert this script -->
-    <script type="text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.12.0.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketchfab Configurator</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
+    <h1>hdsua</h1>
+    <div class="app">
+        <iframe src="" id="api-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="vr"
+            width="640" height="400"></iframe>
 
-    <div class="viewer">
-        <!-- Insert an empty iframe with attributes -->
-        <iframe src="" id="api-frame" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
-            execution-while-out-of-viewport execution-while-not-rendered web-share allowfullscreen
-            mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-
-        <!-- Initialize the viewer
-        <script type="text/javascript">
-            var iframe = document.getElementById('api-frame');
-            var uid = '02f8cc80df444c6bba457679b48b9d7d';
-
-            // By default, the latest version of the viewer API will be used.
-            var client = new Sketchfab(iframe);
-
-            // Alternatively, you can request a specific version.
-            // var client = new Sketchfab( '1.12.0', iframe );
-
-            client.init(uid, {
-                success: function onSuccess(api) {
-                    api.start();
-                    api.addEventListener('viewerready', function () {
-
-                        // API is ready to use
-                        // Insert your code here
-                        console.log('Viewer is ready');
-
-                    });
-                },
-                error: function onError() {
-                    console.log('Viewer error');
-                }
-            });
-
-        </script> -->
+        <div class="options"></div>
     </div>
+    <h1>hdsua</h1>
 
-    <div class="design">
-        <h1>Design</h1>
-        <!-- create a button that when press, console.log("work") -->
-        <button onclick="success()">Click me</button>
-    </div>
 </body>
+
+<script type="text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.3.2.js"></script>
 <script type="text/javascript" src="./SketchfabConfigurator-1.0.6.js"></script>
+<script type="text/javascript">
+    var config = {
+        "model": "02f8cc80df444c6bba457679b48b9d7d",
+        "params": {
+            "camera": 0,
+            "preload": 1,
+            "ui_controls": 0,
+            "ui_infos": 0,
+            "ui_watermark": 0
+        },
+        "config": [
+            {
+                "name": "texture",
+                "material": "Material.002",
+                "channels": [
+                    "AlbedoPBR"
+                ],
+                "type": "texture",
+                "options": [
+                    {
+                        "name": "Madera 01",
+                        "url": "https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg"
+                    },
+                    {
+                        "name": "Madera 02",
+                        "url": "https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg"
+                    },
+                    {
+                        "name": "Madera 03",
+                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg"
+                    },
+                    {
+                        "name": "Madera 04",
+                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg"
+                    }
+                ],
+                "default": 1
+            }
+        ]
+    };
+    var iframeEl = document.getElementById('api-frame');
+    var optionsEl = document.querySelector('.options');
+    var configurator = new SketchfabConfigurator.Configurator(iframeEl, optionsEl, config);
+</script>
 
 </html>
