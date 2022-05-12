@@ -34,14 +34,19 @@ iframe {
 }
 
 .options {
+    margin-top: 20px;
+    margin-bottom: 10px;
     width: 100%;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 15px;
     box-sizing: border-box;
     /* flex: 0 0 300px; */
-    /* padding: 30px; */
     overflow: auto;
 }
 
 .option__control {
+    padding-top: 20px;
     display: flex;
     flex-direction: row;
     overflow: auto;
@@ -110,9 +115,7 @@ iframe {
 
 
 .option {
-    display: flex;
-    padding: 16px 0;
-    border-bottom: 1px solid #ccc;
+    padding: 15px 25px;
 }
 
 .option:first-child {
