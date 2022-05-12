@@ -1,6 +1,6 @@
 // Sketchfab Viewer API: Change Texture/material
 var version = '1.12.0';
-var uid = '96f558dea845400495e03e64d053b517';
+var uid = '02f8cc80df444c6bba457679b48b9d7d';
 var iframe = document.getElementById('api-frame');
 var client = new window.Sketchfab(version, iframe);
 var canvas = document.createElement('canvas');
