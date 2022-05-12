@@ -15,15 +15,19 @@ body {
 }
 
 .viewer {
-    margin-left: 20px;
+    margin: 0 20px;
+    width: 100%;
+
 }
 
 .design {
-    margin-right: 20px;
-    margin-top: 60px;
+    margin: 0 20px;
+    /* margin-top: 60px; */
 }
 
 .actual {
+    margin: 10px 0;
+    margin-right: 10px;
     padding: 15px 25px;
     background-color: #f5f5f5;
     border: 1px solid #ccc;
@@ -39,6 +43,8 @@ body {
 }
 
 .description {
+    margin: 10px 0;
+    margin-left: 10px;
     width: 200px;
     padding: 15px 25px;
     background-color: #f5f5f5;
@@ -49,7 +55,21 @@ body {
     align-items: center;
 }
 
+.mail {
+    margin: 10px 0;
+    padding: 15px 25px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.submit {
+    display: flex;
+    flex-direction: row;
+}
 
 iframe {
     display: block;
