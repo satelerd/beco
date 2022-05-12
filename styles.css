@@ -7,6 +7,10 @@ body {
     font-family: sans-serif;
 }
 
+img {
+    border-radius: 10px;
+}
+
 .app {
     display: flex;
     justify-content: space-between;
@@ -47,6 +51,7 @@ iframe {
 
 .option__control {
     padding-top: 20px;
+    padding-left: 5px;
     display: flex;
     flex-direction: row;
     overflow: auto;
