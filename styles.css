@@ -24,6 +24,16 @@ img {
 
 }
 
+.business {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo {
+    width: 100px;
+    margin: 10px 25px 0 0;
+}
+
 iframe {
     display: block;
     border: 0;
@@ -117,7 +127,17 @@ iframe {
     flex-direction: row;
 }
 
+.mail-input {
+    border-radius: 15px;
+    margin-right: 10px;
+    padding: 2px 8px;
+}
 
+.submit-btn {
+    background: #c6e9d2;
+    border-radius: 15px;
+    margin-left: 10px;
+}
 
 
 .details {
