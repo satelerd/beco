@@ -73,6 +73,13 @@ iframe {
 .actual-img {
     width: 250px;
     height: auto;
+    transition: transform .4s;
+    /* Animation */
+}
+
+.actual-img:hover {
+    transform: scale(2);
+    /* (150% zoom)*/
 }
 
 .description {
