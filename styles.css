@@ -82,6 +82,11 @@ iframe {
     /* (150% zoom)*/
 }
 
+.zoom-text {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
 .description {
     margin: 10px 0;
     margin-left: 10px;
