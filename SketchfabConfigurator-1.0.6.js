@@ -3787,7 +3787,7 @@ var SketchfabConfigurator = function (e) {
         this.model = e, this.index = t
     }
     i.prototype = {
-        template: '\n    <label for="{{id}}">{{option.name}}</label>\n    <div class="option__control">\n        {{#options}}\n            <label class="texture" data-url="{{url}}"  onclick={test(1)}>\n                <input type="radio" name="{{id}}" value="{{currentIndex}}" data-option="{{index}}" {{#isSelected}}checked{{/isSelected}}>\n                <span class="texture__preview">\n                    <img src="{{url}}?preview" width="100" height="100" alt="{{name}}">\n                </span>\n                <span class="texture__name">{{name}}</span>\n            </label>\n        {{/options}}\n    </div>\n    ',
+        template: '\n    <label for="{{id}}">{{option.name}}</label>\n    <div class="option__control">\n        {{#options}}\n            <label class="texture" data-url="{{url}}"  onclick="test({{texture}})">\n                <input type="radio" name="{{id}}" value="{{currentIndex}}" data-option="{{index}}" {{#isSelected}}checked{{/isSelected}}>\n                <span class="texture__preview">\n                    <img src="{{url}}?preview" width="100" height="100" alt="{{name}}">\n                </span>\n                <span class="texture__name">{{name}}</span>\n            </label>\n        {{/options}}\n    </div>\n    ',
         _generateId: function () {
             return "control_" + Math.floor(1e4 * Math.random())
         },
