@@ -9,8 +9,23 @@
 </head>
 
 <script>
-    function test(texture) {
+    function change_texture(texture) {
         console.log(texture);
+        if (texture == "1") {
+            document.getElementById("imageid").src = "https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg";
+        } else if (texture == "2") {
+            document.getElementById("imageid").src = "https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg";
+        } else if (texture == "3") {
+            document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+        } else if (texture == "4") {
+            document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+        } else if (texture == "5") {
+            document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+        } else if (texture == "6") {
+            document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+        } else if (texture == "7") {
+            document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+        }
     }
 </script>
 
@@ -36,7 +51,7 @@
                     <p>
                         diseño acutal
                     </p>
-                    <img class="actual-img" onclick={test(1)} src="https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg"
+                    <img class="actual-img" id="imageid" src="https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg"
                         alt="">
                 </div>
                 <div class="description">
@@ -103,15 +118,18 @@
                     },
                     {
                         "name": "Madera 04",
-                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg"
+                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg",
+                        "texture": 4
                     },
                     {
                         "name": "Madera 05",
-                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg"
+                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg",
+                        "texture": 5
                     },
                     {
                         "name": "Madera 06",
-                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg"
+                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg",
+                        "texture": 6
                     },
                 ],
                 "default": 0
