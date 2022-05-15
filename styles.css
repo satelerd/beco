@@ -30,6 +30,7 @@ h4 {
     margin: 0 20px;
     width: 100%;
     height: 100%;
+    transform: translateZ(0);
 
 }
 
@@ -94,7 +95,7 @@ iframe {
 }
 
 .actual-img {
-    position: inherit;
+    position: relative;
     width: 250px;
     height: auto;
     transition: transform .4s;
@@ -103,12 +104,9 @@ iframe {
 
 .actual-img:hover {
     position: absolute;
-    /* top: -10px; */
-    /* left: -40px; */
-    z-index: 1;
+    z-index: 100;
     transform: scale(2);
     box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.58);
-    /* (150% zoom)*/
 }
 
 .zoom-text {
