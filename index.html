@@ -35,7 +35,7 @@
                         Diseño actual
                     </h4>
                     <img class="actual-img" id="imageid" src="https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg"
-                        alt="">
+                        alt="1">
                     <div class="zoom-text">
                         Acerca el mouse para hacer zoom
                     </div>
@@ -55,9 +55,27 @@
             <div class="mail">
                 <h4>Cotiza la configuración actúal</h4>
                 <p>Te contactaremos a tu mail para entrar en detalles</p>
-                <div class="submit">
+                <!-- <div class="submit">
                     <input class="mail-input" type="text" placeholder="ingresa tu mail">
                     <button class="submit-btn">enviar</button>
+                </div> -->
+                <div class="submit">
+                    <!-- modify this form HTML and place wherever you want your form -->
+                    <form action="https://formspree.io/f/mgedrndl" method="POST">
+                        <div class="submit-container">
+                            <div class="inputs">
+                                <label>
+                                    <input class="mail-input" type="email" name="email" placeholder="Ingresa tu mail">
+                                </label>
+                                <label>
+                                    <textarea class="textarea" name="message"
+                                        placeholder="Que textura(s) te gustaria cotizar"></textarea>
+                                </label>
+                            </div>
+                            <button class="submit-btn" type="submit">Enviar</button>
+                        </div>
+                    </form>
+
                 </div>
             </div>
         </div>
@@ -73,18 +91,25 @@
         console.log(texture);
         if (texture == "1") {
             document.getElementById("imageid").src = "https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg";    // aqui va la imagen asociada con la textura 1
+            document.getElementById("imageid").alt = "1";
         } else if (texture == "2") {
             document.getElementById("imageid").src = "https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg";
+            document.getElementById("imageid").alt = "2";
         } else if (texture == "3") {
             document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+            document.getElementById("imageid").alt = "3";
         } else if (texture == "4") {
             document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+            document.getElementById("imageid").alt = "4";
         } else if (texture == "5") {
             document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+            document.getElementById("imageid").alt = "5";
         } else if (texture == "6") {
             document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+            document.getElementById("imageid").alt = "6";
         } else if (texture == "7") {
             document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+            document.getElementById("imageid").alt = "7";
         }
     }
 </script>
@@ -151,5 +176,80 @@
     var optionsEl = document.querySelector('.options');
     var configurator = new SketchfabConfigurator.Configurator(iframeEl, optionsEl, config);
 </script>
+
+<!-- Funcion que registra los cambios del input de mail y que lo envia -->
+
+<!-- <script type="text/javascript">
+    var submit = document.querySelector('.submit');
+    var mailInput = document.querySelector('.mail-input');
+    var submitBtn = document.querySelector('.submit-btn');
+    var mail = mailInput.value;
+    // get the value of the actual img
+    var img = document.getElementById("imageid").alt;
+
+    // submitBtn.addEventListener('click', function () {
+    //     mail = mailInput.value;
+    //     // send the mail with the img selected
+    //     var xhr = new XMLHttpRequest();
+    //     xhr.open('POST', './mail.php', true);
+    //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    //     xhr.send('mail=' + mail + '&img=' + img);
+    // });
+
+
+    submitBtn.addEventListener('click', function () {
+
+        var from = 'satelerd@gmail.com',
+            to = 'satelerd@gmail.com',
+            body = img,
+            subject = 'Hello World Subject';
+
+        // Call sendEmail function
+        //
+        sendEmail(from, to, body, subject);
+    });
+
+
+    function sendEmail(from, to, body, subject) {
+        //Get the relative url of the site
+        var siteurl = _spPageContextInfo.webServerRelativeUrl;
+        var urlTemplate = siteurl + "/_api/SP.Utilities.Utility.SendEmail";
+        $.ajax({
+            contentType: 'application/json',
+            url: urlTemplate,
+            type: "POST",
+            data: JSON.stringify({
+                'properties': {
+                    '__metadata': {
+                        'type': 'SP.Utilities.EmailProperties'
+                    },
+                    'From': from,
+                    'To': {
+                        'results': [to]
+                    },
+                    'Body': body,
+                    'Subject': subject
+                }
+            }),
+            headers: {
+                "Accept": "application/json;odata=verbose",
+                "content-type": "application/json;odata=verbose",
+                "X-RequestDigest": jQuery("#__REQUESTDIGEST").val()
+            },
+            success: function (data) {
+                alert('Email Sent Successfully');
+            },
+            error: function (err) {
+                alert('Error in sending Email: ' + JSON.stringify(err));
+            }
+        });
+    }
+
+    $(document).ready(function () {
+
+        SP.SOD.executeFunc('sp.js', 'SP.ClientContext', processSendEmails);
+
+    });
+</script> -->
 
 </html>
