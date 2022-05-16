@@ -195,7 +195,7 @@ iframe {
 }
 
 /* if the window is less than 600px make the flex-direction column */
-@media (max-width: 800px) {
+@media (max-width: 1050px) {
     .viewer {
         margin: 0 5px;
     }
