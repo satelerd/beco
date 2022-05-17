@@ -9,6 +9,11 @@
 </head>
 
 <body>
+
+    <!-- Loading screen -->
+    <div id="preloader"></div>
+
+
     <div class="app">
         <!-- Primer container principal: Viewer -->
         <div class="viewer">
@@ -81,6 +86,17 @@
         </div>
     </div>
 
+    <script>
+        var loader = document.getElementById('preloader');
+        document.getElementById('api-frame').onload = function () {
+            loader.style.display = 'none';
+            // alert('myframe is loaded');
+        };
+
+        window.addEventListener('load', function (event) {
+        });
+    </script>
+
 </body>
 
 <!-- SCRIPTS -->
@@ -138,68 +154,9 @@
                     "AlbedoPBR"
                 ],
                 "type": "texture",
+                // Aqui se pueden modificar las texturas
                 "options": [
-                    {
-                        "name": "Madera 01",
-                        "url": "https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg",
-                        "texture": 1
-                    },
-                    {
-                        "name": "Madera 02",
-                        "url": "https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg",
-                        "texture": 2
-
-                    },
-                    {
-                        "name": "Madera 03",
-                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg",
-                        "texture": 3
-                    },
-                    {
-                        "name": "Madera 04",
-                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg",
-                        "texture": 4
-                    },
-                    {
-                        "name": "Madera 05",
-                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg",
-                        "texture": 5
-                    },
-                    {
-                        "name": "Madera 06",
-                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg",
-                        "texture": 6
-                    },
-                    {
-                        "name": "Madera 07",
-                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg",
-                        "texture": 7
-                    },
-                    {
-                        "name": "Madera 08",
-                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg",
-                        "texture": 8
-                    },
-                    {
-                        "name": "Madera 09",
-                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg",
-                        "texture": 9
-                    },
-                    {
-                        "name": "Madera 10",
-                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg",
-                        "texture": 10
-                    },
-                    {
-                        "name": "Madera 11",
-                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg",
-                        "texture": 11
-                    },
-                    {
-                        "name": "Madera 12",
-                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg",
-                        "texture": 12
-                    },
+                    { "name": "Madera 01", "url": "https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg", "texture": 1 }, { "name": "Madera 02", "url": "https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg", "texture": 2 }, { "name": "Madera 03", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 3 }, { "name": "Madera 04", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 4 }, { "name": "Madera 05", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 5 }, { "name": "Madera 06", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 6 }, { "name": "Madera 07", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 7 }, { "name": "Madera 08", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 8 }, { "name": "Madera 09", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 9 }, { "name": "Madera 10", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 10 }, { "name": "Madera 11", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 11 }, { "name": "Madera 12", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 12 },
                 ],
                 "default": 0
             },
@@ -212,7 +169,15 @@
                 "default": "#628cac"
             },
 
-            // Opcion 3. toggle
+            // // Opcion 3. toggle
+            // {
+            //     "name": "Toggle",
+            //     "type": "visible",
+            //     "selector": "[instance=\"1652\"]",
+            //     "default": true
+            // },
+
+            // // Opcion 4. Select
             // {
             //     "name": "Select",
             //     "type": "select",
