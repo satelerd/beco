@@ -133,6 +133,7 @@ iframe {
 
 .mail {
     margin: 10px 0;
+    margin-bottom: 40px;
     padding: 15px 25px;
     background-color: #f5f5f5;
     border: 1px solid #ccc;
@@ -298,6 +299,7 @@ iframe {
     display: block;
     position: relative;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .texture input[type='radio'] {
