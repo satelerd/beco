@@ -119,7 +119,7 @@
 <script type="text/javascript" src="./SketchfabConfigurator-1.0.6.js"></script>
 <script type="text/javascript">
     var config = {
-        "model": "02f8cc80df444c6bba457679b48b9d7d",
+        "model": "f12eb4bb124d4d4faf9257b7c91c1742",
         "params": {
             "camera": 0,
             "preload": 1,
@@ -135,7 +135,8 @@
                     "AlbedoPBR"
                 ],
                 "type": "texture",
-                "options": [        // Aqui puedes agregar nuevas texturas
+                "options": [        // Aqui puedes agregar nuevas opciones (cambiar textura o color)
+                    // Opcion para cambiar las texturas
                     {
                         "name": "Madera 01",
                         "url": "https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg",
@@ -169,7 +170,24 @@
                     },
                 ],
                 "default": 0
-            }
+            },
+
+            // Opcion para cambiar colores
+            {
+                "name": "Color",
+                "type": "color",
+                "material": "COLOR VARIABLE ",
+                "default": "#628cac"
+            },
+
+            // Opcion toggle
+            // {
+            //     "name": "Select",
+            //     "type": "select",
+            //     "options": [],
+            //     "default": 0
+            // }
+
         ]
     };
     var iframeEl = document.getElementById('api-frame');
