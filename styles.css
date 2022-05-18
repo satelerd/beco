@@ -28,6 +28,8 @@ h4 {
     z-index: 1000;
 }
 
+.loader-text {}
+
 .app {
     display: flex;
     justify-content: space-between;
