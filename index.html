@@ -11,9 +11,20 @@
 <body>
 
     <!-- Loading screen -->
-    <div id="preloader"></div>
+    <div id="preloader">
+        <div class="loader">
+            <img class="loader-img" src="./Assets/spinner-icon-gif-14.jpg" alt="">
+            <div class="loader-key">
+                <h3>Ingresa tu clave de Beco</h3>
+                <div class="loader-input">
+                    <input type="text" id="key-input" placeholder="Clave">
+                    <button id="loader-button" onclick="loaderSubmit()">Ingresar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
+    <!-- APP -->
     <div class="app">
         <!-- Primer container principal: Viewer -->
         <div class="viewer">
@@ -85,30 +96,60 @@
     </div>
 
     <script>
-        function doTimeout(ms) {
-            setTimeout(function () {
-                var ids = window.ids; //is non empty
-            }, ms);
-        }
+        // function doTimeout(ms) {
+        //     setTimeout(function () {
+        //         var ids = window.ids; //is non empty
+        //     }, ms);
+        // }
 
-        function sleep(ms, callback) {
-            var start = new Date().getTime(), expire = start + ms;
-            while (new Date().getTime() < expire) { }
-            callback(ms);
-        }
+        // function sleep(ms, callback) {
+        //     var start = new Date().getTime(), expire = start + ms;
+        //     while (new Date().getTime() < expire) { }
+        //     callback(ms);
+        // }
 
-        var loader = document.getElementById('preloader');
-        document.getElementById('api-frame').onload = async function () {
-            sleep(10000, doTimeout);
-            loader.style.display = 'none';
+        // var loader = document.getElementById('preloader');
+        // document.getElementById('api-frame').onload = function () {
+        //     sleep(10000, doTimeout);
+        //     loader.style.display = 'none';
 
-            // alert('myframe is loaded');
-        };
+        //     // alert('myframe is loaded');
+        // };
     </script>
 
 </body>
 
 <!-- SCRIPTS -->
+
+<!-- Loader key submit -->
+<script>
+    function loaderSubmit() {
+        var user_input = document.getElementById('key-input').value;
+        console.log(user_input)
+        // if (user_input.length == 4) {
+        //     document.getElementById('loader-button').disabled = false;
+        // } else {
+        //     document.getElementById('loader-button').disabled = true;
+        // }
+
+        var key = "add";
+        if (user_input == key) {
+            var loader = document.getElementById('preloader');
+            loader.style.display = 'none'
+        }
+        else {
+            alert('Clave incorrecta');
+        }
+    }
+
+    // add event listener if the enter key is pressed, execute loaderSubmit()
+    document.getElementById('key-input').addEventListener('keyup', function (event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            loaderSubmit();
+        }
+    });
+</script>
 
 <!-- Funcion que cambia la imagen de referencia -->
 <script>
