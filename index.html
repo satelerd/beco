@@ -16,9 +16,9 @@
             <img class="loader-img" src="./Assets/spinner-icon-gif-14.jpg" alt="">
             <div class="loader-key">
                 <h3>Estas a punto de entrar en la experiencia Beco</h3>
-                <div class="loader-input">
+                <div id="loader-input">
                     <input type="text" id="key-input" placeholder="Ingresa tu clave">
-                    <button id="loader-button" onclick="loaderSubmit()">Comenzar</button>
+                    <button id="loader-button" onclick="loaderSubmit()">Entrar</button>
                 </div>
             </div>
         </div>
@@ -33,8 +33,8 @@
                 <h2 class="title">Beco - Configura tu espacio</h2>
             </div>
 
-            <iframe src="" id="api-frame" allowfullscreen mozallowfullscreen="true"
-                webkitallowfullscreen="true"></iframe>
+            <iframe src="" id="api-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                preload="true"></iframe>
         </div>
 
 
@@ -95,26 +95,30 @@
         </div>
     </div>
 
-    <script>
-        // function doTimeout(ms) {
-        //     setTimeout(function () {
-        //         var ids = window.ids; //is non empty
-        //     }, ms);
-        // }
+    <!-- Time delay for loader -->
+    <!-- <script>
+        // loader.style.display = 'none';
+        function doTimeout(ms) {
+            setTimeout(function () {
+                var ids = window.ids; //is non empty
+            }, ms);
+        }
 
-        // function sleep(ms, callback) {
-        //     var start = new Date().getTime(), expire = start + ms;
-        //     while (new Date().getTime() < expire) { }
-        //     callback(ms);
-        // }
+        function sleep(ms, callback) {
+            var start = new Date().getTime(), expire = start + ms;
+            while (new Date().getTime() < expire) { }
+            callback(ms);
+        }
 
-        // var loader = document.getElementById('preloader');
-        // document.getElementById('api-frame').onload = function () {
-        //     sleep(10000, doTimeout);
-        //     loader.style.display = 'none';
+        function start() {
+            console.log("yoooo he")
+            sleep(3000, doTimeout);
+            console.log("timeees")
+            var loader = document.getElementById('loader-input');
+            loader.style.display = 'content';
 
-        //     // alert('myframe is loaded');
-        // };
+            // alert('myframe is loaded');
+        }; -->
     </script>
 
 </body>

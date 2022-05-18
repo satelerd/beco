@@ -60,16 +60,21 @@ h4 {
     border: #767676 1px solid;
     border-radius: 15px;
     margin-right: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     padding: 4px 10px;
     font-size: medium;
+}
+
+#loader-input {
+    display: flex;
+    flex-direction: row;
 }
 
 #loader-button {
     background: #c6e9d2;
     border-radius: 15px;
     /* margin-left: 10px; */
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     padding: 4px 10px;
     transition: all .4s;
     font-size: medium;
