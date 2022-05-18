@@ -3754,7 +3754,7 @@ var SketchfabConfigurator = function (e) {
         this.model = e, this.index = t
     }
     i.prototype = {
-        template: '\n    <label for="{{id}}">{{option.name}}</label>\n    <div class="option__control">\n        <input type="checkbox" data-option="{{index}}" id="{{id}}" {{#value}}checked{{/value}}>\n    </div>\n    ',
+        template: '\n    <label for="{{id}}"><h4>{{option.name}}</h4></label>\n    <div class="option__control">\n        <input type="checkbox" data-option="{{index}}" id="{{id}}" {{#value}}checked{{/value}}>\n    </div>\n    ',
         _generateId: function () {
             return "control_" + Math.floor(1e4 * Math.random())
         },
@@ -3827,7 +3827,7 @@ var SketchfabConfigurator = function (e) {
         this.model = e, this.index = t
     }
     i.prototype = {
-        template: '\n    <label for="{{id}}">{{option.name}}</label>\n    <div class="option__control">\n        <select id="{{id}}" data-option="{{index}}" value="{{value}}">\n            {{#options}}\n                <option value="{{index}}" {{#isSelected}}selected{{/isSelected}}>{{name}}</option>\n            {{/options}}\n        </select>\n    </div>\n    ',
+        template: '\n    <label for="{{id}}"><h4>{{option.name}}</h4></label>\n    <div class="option__control">\n        <select id="{{id}}" data-option="{{index}}" value="{{value}}">\n            {{#options}}\n                <option value="{{index}}" {{#isSelected}}selected{{/isSelected}}>{{name}}</option>\n            {{/options}}\n        </select>\n    </div>\n    ',
         _generateId: function () {
             return "control_" + Math.floor(1e4 * Math.random())
         },
@@ -3867,7 +3867,7 @@ var SketchfabConfigurator = function (e) {
         this.model = e, this.index = t
     }
     i.prototype = {
-        template: '\n    <label for="{{id}}">{{option.name}}</label>\n    <div class="option__control">\n        {{#options}}\n            <label class="color" data-value="{{color}}">\n                <input type="radio" name="{{id}}" value="{{color}}" data-option="{{index}}" {{#isSelected}}checked{{/isSelected}}>\n                <span class="color__swatch" style="background-color: {{color}}"></span>\n                <span class="color__name">{{name}}</span>\n            </label>\n        {{/options}}\n        {{^options}}\n            <input type="color" data-option="{{index}}" id="{{id}}" value="{{value}}">\n        {{/options}}\n    </div>\n    ',
+        template: '\n    <label for="{{id}}"><h4>{{option.name}}</h4></label>\n    <div class="option__control">\n        {{#options}}\n            <label class="color" data-value="{{color}}">\n                <input type="radio" name="{{id}}" value="{{color}}" data-option="{{index}}" {{#isSelected}}checked{{/isSelected}}>\n                <span class="color__swatch" style="background-color: {{color}}"></span>\n                <span class="color__name">{{name}}</span>\n            </label>\n        {{/options}}\n        {{^options}}\n            <input type="color" data-option="{{index}}" id="{{id}}" value="{{value}}">\n        {{/options}}\n    </div>\n    ',
         _generateId: function () {
             return "control_" + Math.floor(1e4 * Math.random())
         },
