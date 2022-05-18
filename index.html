@@ -87,14 +87,25 @@
     </div>
 
     <script>
+        function doTimeout(ms) {
+            setTimeout(function () {
+                var ids = window.ids; //is non empty
+            }, ms);
+        }
+
+        function sleep(ms, callback) {
+            var start = new Date().getTime(), expire = start + ms;
+            while (new Date().getTime() < expire) { }
+            callback(ms);
+        }
+
         var loader = document.getElementById('preloader');
-        document.getElementById('api-frame').onload = function () {
+        document.getElementById('api-frame').onload = async function () {
+            sleep(4000, doTimeout);
             loader.style.display = 'none';
+
             // alert('myframe is loaded');
         };
-
-        window.addEventListener('load', function (event) {
-        });
     </script>
 
 </body>
