@@ -9,6 +9,11 @@
 </head>
 
 <body>
+
+    <!-- Loading screen -->
+    <div id="preloader"></div>
+
+
     <div class="app">
         <!-- Primer container principal: Viewer -->
         <div class="viewer">
@@ -81,6 +86,17 @@
         </div>
     </div>
 
+    <script>
+        var loader = document.getElementById('preloader');
+        document.getElementById('api-frame').onload = function () {
+            loader.style.display = 'none';
+            // alert('myframe is loaded');
+        };
+
+        window.addEventListener('load', function (event) {
+        });
+    </script>
+
 </body>
 
 <!-- SCRIPTS -->
@@ -119,7 +135,7 @@
 <script type="text/javascript" src="./SketchfabConfigurator-1.0.6.js"></script>
 <script type="text/javascript">
     var config = {
-        "model": "02f8cc80df444c6bba457679b48b9d7d",
+        "model": "f12eb4bb124d4d4faf9257b7c91c1742",
         "params": {
             "camera": 0,
             "preload": 1,
@@ -127,49 +143,48 @@
             "ui_infos": 0,
             "ui_watermark": 0
         },
+        // Aqui puedes agregar o quitar funciones/opciones (texturas, colores, toggles, etc)
         "config": [
+
+            // Opcion 1. para cambiar las texturas
             {
                 "name": "Texturas",
-                "material": "Material.002",
+                "material": "Material.001",
                 "channels": [
                     "AlbedoPBR"
                 ],
                 "type": "texture",
-                "options": [        // Aqui puedes agregar nuevas texturas
-                    {
-                        "name": "Madera 01",
-                        "url": "https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg",
-                        "texture": 1
-                    },
-                    {
-                        "name": "Madera 02",
-                        "url": "https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg",
-                        "texture": 2
-
-                    },
-                    {
-                        "name": "Madera 03",
-                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg",
-                        "texture": 3
-                    },
-                    {
-                        "name": "Madera 04",
-                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg",
-                        "texture": 4
-                    },
-                    {
-                        "name": "Madera 05",
-                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg",
-                        "texture": 5
-                    },
-                    {
-                        "name": "Madera 06",
-                        "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg",
-                        "texture": 6
-                    },
+                // Aqui se pueden modificar las texturas
+                "options": [
+                    { "name": "Madera 01", "url": "https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg", "texture": 1 }, { "name": "Madera 02", "url": "https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg", "texture": 2 }, { "name": "Madera 03", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 3 }, { "name": "Madera 04", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 4 }, { "name": "Madera 05", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 5 }, { "name": "Madera 06", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 6 }, { "name": "Madera 07", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 7 }, { "name": "Madera 08", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 8 }, { "name": "Madera 09", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 9 }, { "name": "Madera 10", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 10 }, { "name": "Madera 11", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 11 }, { "name": "Madera 12", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 12 },
                 ],
                 "default": 0
-            }
+            },
+
+            // Opcion 2. para cambiar colores
+            {
+                "name": "Color",
+                "type": "color",
+                "material": "COLOR VARIABLE ",
+                "default": "#628cac"
+            },
+
+            // // Opcion 3. toggle
+            // {
+            //     "name": "Toggle",
+            //     "type": "visible",
+            //     "selector": "[instance=\"1652\"]",
+            //     "default": true
+            // },
+
+            // // Opcion 4. Select
+            // {
+            //     "name": "Select",
+            //     "type": "select",
+            //     "options": [],
+            //     "default": 0
+            // }
+
         ]
     };
     var iframeEl = document.getElementById('api-frame');

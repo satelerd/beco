@@ -19,6 +19,15 @@ h4 {
     padding: 0;
 }
 
+#preloader {
+    background: #2a2826 url(Assets/spinner-icon-gif-14.jpg) no-repeat center;
+    background-size: 30%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+}
+
 .app {
     display: flex;
     justify-content: space-between;
