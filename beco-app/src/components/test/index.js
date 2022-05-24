@@ -1,11 +1,11 @@
 // import react
 import React from "react";
 import './styles.css'
-import ScriptTag from 'react-script-tag';
+// import ScriptTag from 'react-script-tag';
 
 
 
-function test() {
+function Test() {
     // <!-- SCRIPTS -->
 
     // <!-- Loader key submit -->
@@ -18,19 +18,17 @@ function test() {
         //     document.getElementById('loader-button').disabled = true;
         // }
 
-        if (user_input == "1") {
-            var loader = document.getElementById('preloader');
+        var loader = document.getElementById('preloader');
+        var title = document.getElementById('title-pers');
+        if (user_input === "1") {
             loader.style.display = 'none'
 
-            var title = document.getElementById('title-pers');
             title.innerHTML = "Pisos Ingevec";
             document.getElementById("viewer").alt = "f12eb4bb124d4d4faf9257b7c91c1742";
         }
-        else if (user_input == "2") {
-            var loader = document.getElementById('preloader');
+        else if (user_input === "2") {
             loader.style.display = 'none'
 
-            var title = document.getElementById('title-pers');
             title.innerHTML = "Banitorios Ingevec";
             document.getElementById("viewer").alt = "2";
 
@@ -51,101 +49,99 @@ function test() {
     });
 
 
-    // <!-- Funcion que cambia la imagen de referencia -->
-    function change_texture(texture) {
-        console.log(texture);
-        if (texture == "1") {
-            document.getElementById("imageid").src = "https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg";    // aqui va la imagen asociada con la textura 1
-            document.getElementById("imageid").alt = "1";
-        } else if (texture == "2") {
-            document.getElementById("imageid").src = "https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg";
-            document.getElementById("imageid").alt = "2";
-        } else if (texture == "3") {
-            document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
-            document.getElementById("imageid").alt = "3";
-        } else if (texture == "4") {
-            document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
-            document.getElementById("imageid").alt = "4";
-        } else if (texture == "5") {
-            document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
-            document.getElementById("imageid").alt = "5";
-        } else if (texture == "6") {
-            document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
-            document.getElementById("imageid").alt = "6";
-        } else if (texture == "7") {
-            document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
-            document.getElementById("imageid").alt = "7";
-        }
-    }
+    // // <!-- Funcion que cambia la imagen de referencia -->
+    // function change_texture(texture) {
+    //     console.log(texture);
+    //     if (texture === "1") {
+    //         document.getElementById("imageid").src = "https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg";    // aqui va la imagen asociada con la textura 1
+    //         document.getElementById("imageid").alt = "1";
+    //     } else if (texture === "2") {
+    //         document.getElementById("imageid").src = "https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg";
+    //         document.getElementById("imageid").alt = "2";
+    //     } else if (texture === "3") {
+    //         document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+    //         document.getElementById("imageid").alt = "3";
+    //     } else if (texture === "4") {
+    //         document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+    //         document.getElementById("imageid").alt = "4";
+    //     } else if (texture === "5") {
+    //         document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+    //         document.getElementById("imageid").alt = "5";
+    //     } else if (texture === "6") {
+    //         document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+    //         document.getElementById("imageid").alt = "6";
+    //     } else if (texture === "7") {
+    //         document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+    //         document.getElementById("imageid").alt = "7";
+    //     }
+    // }
 
-    // <!-- Scripts para hacer funcionar sketchfab y cambiar las texturas -->
-    {/* <script type=" text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.3.2.js"></script>
-<script type="text/javascript" src="./SketchfabConfigurator-1.0.6.js"></script> */}
-    var alt = document.getElementById('viewer').alt;
-    console.log(alt)
+    //     // <!-- Scripts para hacer funcionar sketchfab y cambiar las texturas -->
+    //     {/* <script type=" text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.3.2.js"></script>
+    // <script type="text/javascript" src="./SketchfabConfigurator-1.0.6.js"></script> */}
+    //     var alt = document.getElementById('viewer').alt;
+    //     console.log(alt)
 
-    var config = {
-        "model": alt,
-        "params": {
-            "camera": 0,
-            "preload": 1,
-            "ui_controls": 0,
-            "ui_infos": 0,
-            "ui_watermark": 0
-        },
-        // Aqui puedes agregar o quitar funciones/opciones (texturas, colores, toggles, etc)
-        "config": [
+    //     var config = {
+    //         "model": alt,
+    //         "params": {
+    //             "camera": 0,
+    //             "preload": 1,
+    //             "ui_controls": 0,
+    //             "ui_infos": 0,
+    //             "ui_watermark": 0
+    //         },
+    //         // Aqui puedes agregar o quitar funciones/opciones (texturas, colores, toggles, etc)
+    //         "config": [
 
-            // Opcion 1. para cambiar las texturas
-            {
-                "name": "Texturas",
-                "material": "Material.001",
-                "channels": [
-                    "AlbedoPBR"
-                ],
-                "type": "texture",
-                // Aqui se pueden modificar las texturas
-                "options": [
-                    { "name": "Madera 01", "url": "https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg", "texture": 1 }, { "name": "Madera 02", "url": "https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg", "texture": 2 }, { "name": "Madera 03", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 3 }, { "name": "Madera 04", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 4 }, { "name": "Madera 05", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 5 }, { "name": "Madera 06", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 6 }, { "name": "Madera 07", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 7 }, { "name": "Madera 08", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 8 }, { "name": "Madera 09", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 9 }, { "name": "Madera 10", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 10 }, { "name": "Madera 11", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 11 }, { "name": "Madera 12", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 12 },
-                ],
-                "default": 0
-            },
+    //             // Opcion 1. para cambiar las texturas
+    //             {
+    //                 "name": "Texturas",
+    //                 "material": "Material.001",
+    //                 "channels": [
+    //                     "AlbedoPBR"
+    //                 ],
+    //                 "type": "texture",
+    //                 // Aqui se pueden modificar las texturas
+    //                 "options": [
+    //                     { "name": "Madera 01", "url": "https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg", "texture": 1 }, { "name": "Madera 02", "url": "https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg", "texture": 2 }, { "name": "Madera 03", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 3 }, { "name": "Madera 04", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 4 }, { "name": "Madera 05", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 5 }, { "name": "Madera 06", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 6 }, { "name": "Madera 07", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 7 }, { "name": "Madera 08", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 8 }, { "name": "Madera 09", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 9 }, { "name": "Madera 10", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 10 }, { "name": "Madera 11", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 11 }, { "name": "Madera 12", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 12 },
+    //                 ],
+    //                 "default": 0
+    //             },
 
-            // Opcion 2. para cambiar colores
-            {
-                "name": "Color",
-                "type": "color",
-                "material": "COLOR VARIABLE ",
-                "default": "#628cac"
-            },
+    //             // Opcion 2. para cambiar colores
+    //             {
+    //                 "name": "Color",
+    //                 "type": "color",
+    //                 "material": "COLOR VARIABLE ",
+    //                 "default": "#628cac"
+    //             },
 
-            // // Opcion 3. toggle
-            // {
-            //     "name": "Toggle",
-            //     "type": "visible",
-            //     "selector": "[instance=\"1652\"]",
-            //     "default": true
-            // },
+    //             // // Opcion 3. toggle
+    //             // {
+    //             //     "name": "Toggle",
+    //             //     "type": "visible",
+    //             //     "selector": "[instance=\"1652\"]",
+    //             //     "default": true
+    //             // },
 
-            // // Opcion 4. Select
-            // {
-            //     "name": "Select",
-            //     "type": "select",
-            //     "options": [],
-            //     "default": 0
-            // }
+    //             // // Opcion 4. Select
+    //             // {
+    //             //     "name": "Select",
+    //             //     "type": "select",
+    //             //     "options": [],
+    //             //     "default": 0
+    //             // }
 
-        ]
-    };
-    var iframeEl = document.getElementById('api-frame');
-    var optionsEl = document.querySelector('.options');
-    var configurator = new SketchfabConfigurator.Configurator(iframeEl, optionsEl, config);
+    //         ]
+    //     };
+    //     var iframeEl = document.getElementById('api-frame');
+    //     var optionsEl = document.querySelector('.options');
+    //     var configurator = new SketchfabConfigurator.Configurator(iframeEl, optionsEl, config);
 
 
     return (
         <body>
-            <ScriptTag type="text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.3.2.js" />
-            <ScriptTag type="text/javascript" src="./SketchfabConfigurator-1.0.6.js" />
             <div id="preloader">
                 <div className="loader-key">
                     <div class="ux-text">
@@ -196,8 +192,8 @@ function test() {
                         <h2 id="title-pers" class="title">Pisos Ingevec (banitorios)</h2>
                     </div>
 
-                    <iframe src="" id="api-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
-                        preload="true"></iframe>
+                    {/* <iframe src="" id="api-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                        preload="true"></iframe> */}
                 </div>
 
 
@@ -301,4 +297,4 @@ function test() {
     );
 }
 
-export default test;
+export default Test;
