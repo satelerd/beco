@@ -112,10 +112,6 @@
             <div class="mail">
                 <h4>Cotiza la configuración actúal</h4>
                 <p>Te contactaremos a tu mail para entrar en detalles</p>
-                <!-- <div class="submit">
-                    <input class="mail-input" type="text" placeholder="ingresa tu mail">
-                    <button class="submit-btn">enviar</button>
-                </div> -->
                 <div class="submit">
                     <!-- modify this form HTML and place wherever you want your form -->
                     <form action="https://formspree.io/f/mgedrndl" method="POST">
@@ -173,11 +169,6 @@
     function loaderSubmit() {
         var user_input = document.getElementById('key-input').value;
         console.log(user_input)
-        // if (user_input.length == 4) {
-        //     document.getElementById('loader-button').disabled = false;
-        // } else {
-        //     document.getElementById('loader-button').disabled = true;
-        // }
 
         if (user_input == "1") {
             var loader = document.getElementById('preloader');
@@ -304,80 +295,5 @@
     var optionsEl = document.querySelector('.options');
     var configurator = new SketchfabConfigurator.Configurator(iframeEl, optionsEl, config);
 </script>
-
-<!-- Funcion que registra los cambios del input de mail y que lo envia -->
-
-<!-- <script type="text/javascript">
-    var submit = document.querySelector('.submit');
-    var mailInput = document.querySelector('.mail-input');
-    var submitBtn = document.querySelector('.submit-btn');
-    var mail = mailInput.value;
-    // get the value of the actual img
-    var img = document.getElementById("imageid").alt;
-
-    // submitBtn.addEventListener('click', function () {
-    //     mail = mailInput.value;
-    //     // send the mail with the img selected
-    //     var xhr = new XMLHttpRequest();
-    //     xhr.open('POST', './mail.php', true);
-    //     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    //     xhr.send('mail=' + mail + '&img=' + img);
-    // });
-
-
-    submitBtn.addEventListener('click', function () {
-
-        var from = 'satelerd@gmail.com',
-            to = 'satelerd@gmail.com',
-            body = img,
-            subject = 'Hello World Subject';
-
-        // Call sendEmail function
-        //
-        sendEmail(from, to, body, subject);
-    });
-
-
-    function sendEmail(from, to, body, subject) {
-        //Get the relative url of the site
-        var siteurl = _spPageContextInfo.webServerRelativeUrl;
-        var urlTemplate = siteurl + "/_api/SP.Utilities.Utility.SendEmail";
-        $.ajax({
-            contentType: 'application/json',
-            url: urlTemplate,
-            type: "POST",
-            data: JSON.stringify({
-                'properties': {
-                    '__metadata': {
-                        'type': 'SP.Utilities.EmailProperties'
-                    },
-                    'From': from,
-                    'To': {
-                        'results': [to]
-                    },
-                    'Body': body,
-                    'Subject': subject
-                }
-            }),
-            headers: {
-                "Accept": "application/json;odata=verbose",
-                "content-type": "application/json;odata=verbose",
-                "X-RequestDigest": jQuery("#__REQUESTDIGEST").val()
-            },
-            success: function (data) {
-                alert('Email Sent Successfully');
-            },
-            error: function (err) {
-                alert('Error in sending Email: ' + JSON.stringify(err));
-            }
-        });
-    }
-
-    $(document).ready(function () {
-
-        SP.SOD.executeFunc('sp.js', 'SP.ClientContext', processSendEmails);
-
-    });
-</script> -->
 
 </html>
