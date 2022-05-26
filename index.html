@@ -16,7 +16,7 @@
     <div id="preloader">
         <div class="loader-key">
             <div class="ux-text">
-                <h1 class="loader-h1">Bienvenido <span class="bold">Ingevec</span> 👋</h1>
+                <h1 class="loader-h1">Bienvenido <span class="bold" id="business_name2"></span> 👋</h1>
                 <h2 class="loader-h2">Tu showroom personalizado está listo, aqui podras probar nuestros productos y
                     diseños en tupropio espacio</h2>
 
@@ -42,9 +42,9 @@
             </div>
         </div>
         <div class="loader-logos">
-            <img class="loader-img" src="./Assets/Logo_ingevec_white.png" alt="">
+            <img class="loader-img" id="loader-img-business" src="./Assets/Logo_ingevec_white.png" alt="">
 
-            <img class="loader-img" src="./Assets/Logo_ingevec_white.png" alt="">
+            <img class="loader-img" id="loader-img-beco" src="" alt="Beco logo">
         </div>
     </div>
 
@@ -55,7 +55,7 @@
         <div class="viewer" alt="f12eb4bb124d4d4faf9257b7c91c1742">
             <div class="business">
                 <img class="logo" src="" alt="logo">
-                <h2 id="title-pers" class="title">Pisos Ingevec (banitorios)</h2>
+                <h2 id="title-pers" class="title">Pisos <span class="bold" id="business_name"></span></h2>
             </div>
 
             <iframe src="" id="api-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
@@ -116,14 +116,29 @@
 
 </body>
 
+
+
+<!-- ------------------------------------------------------------------- -->
+
 <!-- SCRIPTS -->
+
+<!-- ------------------------------------------------------------------- -->
 
 <!-- Zona de personalizacion -->
 <script type="text/javascript">
+    // Variables para el HTML
     var business_name = "Ingevec";
     var business_logo = "./Assets/Logo_ingevec_white.png";
 
+    // Variables para el viewer
     var textures = ["https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg", "https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg", "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg"];
+
+    // Funcion para agregar las variables al html
+    (() => {
+        document.getElementById("business_name").innerHTML = business_name;
+        document.getElementById("business_name2").innerHTML = business_name;
+        document.getElementById("loader-img-business").src = business_logo;
+    })();
 </script>
 
 <!-- Loader key submit -->
@@ -136,16 +151,12 @@
             var loader = document.getElementById('preloader');
             loader.style.display = 'none'
 
-            var title = document.getElementById('title-pers');
-            title.innerHTML = "Pisos Ingevec";
             document.getElementById("viewer").alt = "f12eb4bb124d4d4faf9257b7c91c1742";
         }
         else if (user_input == "2") {
             var loader = document.getElementById('preloader');
             loader.style.display = 'none'
 
-            var title = document.getElementById('title-pers');
-            title.innerHTML = "Banitorios Ingevec";
             document.getElementById("viewer").alt = "2";
 
         }
