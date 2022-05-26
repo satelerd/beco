@@ -18,7 +18,7 @@
             <div class="ux-text">
                 <h1 class="loader-h1">Bienvenido <span class="bold" id="business_name2"></span> 👋</h1>
                 <h2 class="loader-h2">Tu showroom personalizado está listo, aqui podras probar nuestros productos y
-                    diseños en tupropio espacio</h2>
+                    diseños en tu propio espacio</h2>
 
 
                 <!-- create a list with the rules to how to use the showroom -->
@@ -91,7 +91,7 @@
             </div>
 
             <div class="mail">
-                <h4>Cotiza la configuración actúal</h4>
+                <h4>Cotiza las texturas que te gustaron</h4>
                 <p>Te contactaremos a tu mail para entrar en detalles</p>
                 <div class="submit">
                     <!-- modify this form HTML and place wherever you want your form -->
@@ -131,7 +131,7 @@
     var business_logo = "./Assets/Logo_ingevec_white.png";
 
     // Variables para el viewer
-    var textures = ["https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg", "https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg", "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg"];
+    var textures = [["https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg", "BD1001"], ["https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg", "BD1003"], ["https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "BD1006"]];
 
     // Funcion para agregar las variables al html
     (() => {
@@ -180,40 +180,40 @@
     function change_texture(texture) {
         console.log(texture);
         if (texture == "1") {
-            document.getElementById("imageid").src = textures[0];    // aqui va la imagen asociada con la textura 1
+            document.getElementById("imageid").src = textures[0][0];    // aqui va la imagen asociada con la textura 1
             document.getElementById("imageid").alt = "1";
         } else if (texture == "2") {
-            document.getElementById("imageid").src = textures[1];
+            document.getElementById("imageid").src = textures[1][0];
             document.getElementById("imageid").alt = "2";
         } else if (texture == "3") {
-            document.getElementById("imageid").src = textures[2];
+            document.getElementById("imageid").src = textures[2][0];
             document.getElementById("imageid").alt = "3";
         } else if (texture == "4") {
-            document.getElementById("imageid").src = textures[2];
+            document.getElementById("imageid").src = textures[2][0];
             document.getElementById("imageid").alt = "4";
         } else if (texture == "5") {
-            document.getElementById("imageid").src = textures[2];
+            document.getElementById("imageid").src = textures[2][0];
             document.getElementById("imageid").alt = "5";
         } else if (texture == "6") {
-            document.getElementById("imageid").src = textures[2];
+            document.getElementById("imageid").src = textures[2][0];
             document.getElementById("imageid").alt = "6";
         } else if (texture == "7") {
-            document.getElementById("imageid").src = textures[2];
+            document.getElementById("imageid").src = textures[2][0];
             document.getElementById("imageid").alt = "7";
         } else if (texture == "8") {
-            document.getElementById("imageid").src = textures[2];
+            document.getElementById("imageid").src = textures[2][0];
             document.getElementById("imageid").alt = "8";
         } else if (texture == "9") {
-            document.getElementById("imageid").src = textures[2];
+            document.getElementById("imageid").src = textures[2][0];
             document.getElementById("imageid").alt = "9";
         } else if (texture == "10") {
-            document.getElementById("imageid").src = textures[2];
+            document.getElementById("imageid").src = textures[2][0];
             document.getElementById("imageid").alt = "10";
         } else if (texture == "11") {
-            document.getElementById("imageid").src = textures[2];
+            document.getElementById("imageid").src = textures[2][0];
             document.getElementById("imageid").alt = "11";
         } else if (texture == "12") {
-            document.getElementById("imageid").src = textures[2];
+            document.getElementById("imageid").src = textures[2][0];
             document.getElementById("imageid").alt = "12";
         } else {
             document.getElementById("imageid").src = textures[2];
@@ -248,18 +248,18 @@
                 ],
                 "type": "texture",
                 "options": [
-                    { "name": "BD1001", "url": textures[0], "texture": 1 },
-                    { "name": "BD1003", "url": textures[1], "texture": 2 },
-                    { "name": "BD1006", "url": textures[2], "texture": 3 },
-                    { "name": "BD1012", "url": textures[2], "texture": 4 },
-                    { "name": "BD1016", "url": textures[2], "texture": 5 },
-                    { "name": "BD1018", "url": textures[2], "texture": 6 },
-                    { "name": "BD1022", "url": textures[2], "texture": 7 },
-                    { "name": "BD1023", "url": textures[2], "texture": 8 },
-                    { "name": "BD1028", "url": textures[2], "texture": 9 },
-                    { "name": "BD1029", "url": textures[2], "texture": 10 },
-                    { "name": "Madera 11", "url": textures[2], "texture": 11 },
-                    { "name": "Madera 12", "url": textures[2], "texture": 12 },
+                    { "name": textures[0][1], "url": textures[0][0], "texture": 1 },
+                    { "name": textures[1][1], "url": textures[1][0], "texture": 2 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 3 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 4 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 5 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 6 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 7 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 8 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 9 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 10 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 11 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 12 },
                 ],
                 "default": 0
             },
