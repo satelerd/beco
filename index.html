@@ -134,41 +134,23 @@
         </div>
     </div>
 
-    <!-- Time delay for loader -->
-    <!-- <script>
-        // loader.style.display = 'none';
-        function doTimeout(ms) {
-            setTimeout(function () {
-                var ids = window.ids; //is non empty
-            }, ms);
-        }
-
-        function sleep(ms, callback) {
-            var start = new Date().getTime(), expire = start + ms;
-            while (new Date().getTime() < expire) { }
-            callback(ms);
-        }
-
-        function start() {
-            console.log("yoooo he")
-            sleep(3000, doTimeout);
-            console.log("timeees")
-            var loader = document.getElementById('loader-input');
-            loader.style.display = 'content';
-
-            // alert('myframe is loaded');
-        }; -->
-    </script>
-
 </body>
 
 <!-- SCRIPTS -->
+
+<!-- Zona de personalizacion -->
+<script type="text/javascript">
+    var business_name = "Ingevec";
+    var business_logo = "./Assets/Logo_ingevec_white.png";
+
+    var textures = ["https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg", "https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg", "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg"];
+</script>
 
 <!-- Loader key submit -->
 <script>
     function loaderSubmit() {
         var user_input = document.getElementById('key-input').value;
-        console.log(user_input)
+        // console.log(user_input)
 
         if (user_input == "1") {
             var loader = document.getElementById('preloader');
@@ -190,8 +172,6 @@
         else {
             alert('Clave incorrecta');
         }
-
-
     }
 
     // add event listener if the enter key is pressed, execute loaderSubmit()
@@ -209,26 +189,44 @@
     function change_texture(texture) {
         console.log(texture);
         if (texture == "1") {
-            document.getElementById("imageid").src = "https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg";    // aqui va la imagen asociada con la textura 1
+            document.getElementById("imageid").src = textures[0];    // aqui va la imagen asociada con la textura 1
             document.getElementById("imageid").alt = "1";
         } else if (texture == "2") {
-            document.getElementById("imageid").src = "https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg";
+            document.getElementById("imageid").src = textures[1];
             document.getElementById("imageid").alt = "2";
         } else if (texture == "3") {
-            document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+            document.getElementById("imageid").src = textures[2];
             document.getElementById("imageid").alt = "3";
         } else if (texture == "4") {
-            document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+            document.getElementById("imageid").src = textures[2];
             document.getElementById("imageid").alt = "4";
         } else if (texture == "5") {
-            document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+            document.getElementById("imageid").src = textures[2];
             document.getElementById("imageid").alt = "5";
         } else if (texture == "6") {
-            document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+            document.getElementById("imageid").src = textures[2];
             document.getElementById("imageid").alt = "6";
         } else if (texture == "7") {
-            document.getElementById("imageid").src = "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg";
+            document.getElementById("imageid").src = textures[2];
             document.getElementById("imageid").alt = "7";
+        } else if (texture == "8") {
+            document.getElementById("imageid").src = textures[2];
+            document.getElementById("imageid").alt = "8";
+        } else if (texture == "9") {
+            document.getElementById("imageid").src = textures[2];
+            document.getElementById("imageid").alt = "9";
+        } else if (texture == "10") {
+            document.getElementById("imageid").src = textures[2];
+            document.getElementById("imageid").alt = "10";
+        } else if (texture == "11") {
+            document.getElementById("imageid").src = textures[2];
+            document.getElementById("imageid").alt = "11";
+        } else if (texture == "12") {
+            document.getElementById("imageid").src = textures[2];
+            document.getElementById("imageid").alt = "12";
+        } else {
+            document.getElementById("imageid").src = textures[2];
+            document.getElementById("imageid").alt = "unknown";
         }
     }
 </script>
@@ -260,7 +258,18 @@
                 "type": "texture",
                 // Aqui se pueden modificar las texturas
                 "options": [
-                    { "name": "Madera 01", "url": "https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg", "texture": 1 }, { "name": "Madera 02", "url": "https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg", "texture": 2 }, { "name": "Madera 03", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 3 }, { "name": "Madera 04", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 4 }, { "name": "Madera 05", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 5 }, { "name": "Madera 06", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 6 }, { "name": "Madera 07", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 7 }, { "name": "Madera 08", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 8 }, { "name": "Madera 09", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 9 }, { "name": "Madera 10", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 10 }, { "name": "Madera 11", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 11 }, { "name": "Madera 12", "url": "https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "texture": 12 },
+                    { "name": "BD1001", "url": textures[0], "texture": 1 },
+                    { "name": "BD1003", "url": textures[1], "texture": 2 },
+                    { "name": "BD1006", "url": textures[2], "texture": 3 },
+                    { "name": "BD1012", "url": textures[2], "texture": 4 },
+                    { "name": "BD1016", "url": textures[2], "texture": 5 },
+                    { "name": "BD1018", "url": textures[2], "texture": 6 },
+                    { "name": "BD1022", "url": textures[2], "texture": 7 },
+                    { "name": "BD1023", "url": textures[2], "texture": 8 },
+                    { "name": "BD1028", "url": textures[2], "texture": 9 },
+                    { "name": "BD1029", "url": textures[2], "texture": 10 },
+                    { "name": "Madera 11", "url": textures[2], "texture": 11 },
+                    { "name": "Madera 12", "url": textures[2], "texture": 12 },
                 ],
                 "default": 0
             },
@@ -294,6 +303,32 @@
     var iframeEl = document.getElementById('api-frame');
     var optionsEl = document.querySelector('.options');
     var configurator = new SketchfabConfigurator.Configurator(iframeEl, optionsEl, config);
+</script>
+
+<!-- Time delay for loader -->
+<!-- <script>
+        // loader.style.display = 'none';
+        function doTimeout(ms) {
+            setTimeout(function () {
+                var ids = window.ids; //is non empty
+            }, ms);
+        }
+
+        function sleep(ms, callback) {
+            var start = new Date().getTime(), expire = start + ms;
+            while (new Date().getTime() < expire) { }
+            callback(ms);
+        }
+
+        function start() {
+            console.log("yoooo he")
+            sleep(3000, doTimeout);
+            console.log("timeees")
+            var loader = document.getElementById('loader-input');
+            loader.style.display = 'content';
+
+            // alert('myframe is loaded');
+        }; -->
 </script>
 
 </html>
