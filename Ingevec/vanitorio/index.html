@@ -133,13 +133,14 @@
     // Variables para el viewer
     var model = "b13ebd70a84a46eea1f400fb77eab527"
     var textures = [["https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg", "BD1001"], ["https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg", "BD1003"], ["https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "BD1006"]];
+    var material = "Material.007"
 
-    // Funcion para agregar las variables al html
-    (() => {
-        document.getElementById("business_name").innerHTML = business_name;
-        document.getElementById("business_name2").innerHTML = business_name;
-        document.getElementById("loader-img-business").src = business_logo;
-    })();
+        // Funcion para agregar las variables al html
+        (() => {
+            document.getElementById("business_name").innerHTML = business_name;
+            document.getElementById("business_name2").innerHTML = business_name;
+            document.getElementById("loader-img-business").src = business_logo;
+        })();
 </script>
 
 <!-- Loader key submit -->
@@ -243,7 +244,7 @@
             // Opcion 1. para cambiar las texturas
             {
                 "name": "Texturas",
-                "material": "Material.001",
+                "material": material,
                 "channels": [
                     "AlbedoPBR"
                 ],
