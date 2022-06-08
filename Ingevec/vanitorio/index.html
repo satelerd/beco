@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beco - Configura tu espacio</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading screen -->
+    <div id="preloader">
+        <div class="loader-key">
+            <div class="ux-text">
+                <h1 class="loader-h1">Bienvenido <span class="bold" id="business_name2"></span> 👋</h1>
+                <h2 class="loader-h2">Tu showroom personalizado está listo, aqui podras probar nuestros productos y
+                    diseños en tu propio espacio</h2>
+
+
+                <!-- create a list with the rules to how to use the showroom -->
+                <p class="loader-p"> ¿Como usar?</p>
+                <ul>
+                    <li>
+                        <p class="loader-p">Explora tu espacio con el mouse</p>
+                    </li>
+                    <li>
+                        <p class="loader-p">Experimenta con las texturas y colores <span class="bold">BECO</span>™</p>
+                    </li>
+                    <li>
+                        <p class="loader-p">Finalmente, ingresa tu correo y tu cotizacion estará en camino</p>
+                    </li>
+                </ul>
+
+            </div>
+            <div id="loader-input">
+                <input type="text" id="key-input" placeholder="Ingresa tu clave">
+                <button id="loader-button" onclick="loaderSubmit()">Comenzar</button>
+            </div>
+        </div>
+        <div class="loader-logos">
+            <img class="loader-img" id="loader-img-business" src="./Assets/Logo_ingevec_white.png" alt="">
+
+            <img class="loader-img" id="loader-img-beco" src="" alt="Beco logo">
+        </div>
+    </div>
+
+
+    <!-- APP -->
+    <div class="app">
+        <!-- Primer container principal: Viewer -->
+        <div class="viewer" alt="f12eb4bb124d4d4faf9257b7c91c1742">
+            <div class="business">
+                <img class="logo" src="" alt="logo">
+                <h2 id="title-pers" class="title">vanitorio <span class="bold" id="business_name"></span></h2>
+            </div>
+
+            <iframe src="" id="api-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                preload="true"></iframe>
+        </div>
+
+
+        <!-- Segundo container principal: Diseño -->
+        <div class="design">
+            <!-- Estas son las opciones de material (si se quiere editar hay que ir al script de sketchfab) -->
+            <div class="options"></div>
+
+            <div class="details">
+                <div class="actual">
+                    <h4>Diseño actual</h4>
+                    <img class="actual-img" id="imageid" src="https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg"
+                        alt="1">
+                    <div class="zoom-text">
+                        Acerca el mouse para hacer zoom
+                    </div>
+                </div>
+                <div class="description">
+                    <h4>Piso SPC</h4>
+                    <p>Ultima generación de pisos vinilicos.</p>
+                    <ul>
+                        <li>100% Resistente al agua</li>
+                        <li>Resistente a la radiación UV</li>
+                        <li>Instalación rápida con sistema de “click”</li>
+                        <li>Excelente resistencia térmica</li>
+                    </ul>
+                    <p>Descarga <a href="google.com">aquí</a> la ficha tecnica
+                </div>
+            </div>
+
+            <div class="mail">
+                <h4>Cotiza las texturas que te gustaron</h4>
+                <p>Te contactaremos a tu mail para entrar en detalles</p>
+                <div class="submit">
+                    <!-- modify this form HTML and place wherever you want your form -->
+                    <form action="https://formspree.io/f/mgedrndl" method="POST">
+                        <div class="submit-container">
+                            <div class="inputs">
+                                <label>
+                                    <input class="mail-input" type="email" name="email" placeholder="Ingresa tu mail">
+                                </label>
+                                <label>
+                                    <textarea class="textarea" name="message"
+                                        placeholder="Que textura(s) te gustaria cotizar"></textarea>
+                                </label>
+                            </div>
+                            <button class="submit-btn" type="submit">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+
+<!-- ------------------------------------------------------------------- -->
+
+<!-- SCRIPTS -->
+
+<!-- ------------------------------------------------------------------- -->
+
+<!-- Zona de personalizacion -->
+<script type="text/javascript">
+    // Variables para el HTML
+    var business_name = "Ingevec";
+    var business_logo = "./Assets/Logo_ingevec_white.png";
+
+    // Variables para el viewer
+    var textures = [["https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg", "BD1001"], ["https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg", "BD1003"], ["https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "BD1006"]];
+
+    // Funcion para agregar las variables al html
+    (() => {
+        document.getElementById("business_name").innerHTML = business_name;
+        document.getElementById("business_name2").innerHTML = business_name;
+        document.getElementById("loader-img-business").src = business_logo;
+    })();
+</script>
+
+<!-- Loader key submit -->
+<script>
+    function loaderSubmit() {
+        var user_input = document.getElementById('key-input').value;
+        // console.log(user_input)
+
+        if (user_input == "1") {
+            var loader = document.getElementById('preloader');
+            loader.style.display = 'none'
+
+            document.getElementById("viewer").alt = "f12eb4bb124d4d4faf9257b7c91c1742";
+        }
+        else if (user_input == "2") {
+            var loader = document.getElementById('preloader');
+            loader.style.display = 'none'
+
+            document.getElementById("viewer").alt = "2";
+
+        }
+        else {
+            alert('Clave incorrecta');
+        }
+    }
+
+    // add event listener if the enter key is pressed, execute loaderSubmit()
+    document.getElementById('key-input').addEventListener('keyup', function (event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            loaderSubmit();
+        }
+    });
+
+</script>
+
+<!-- Funcion que cambia la imagen de referencia -->
+<script>
+    function change_texture(texture) {
+        console.log(texture);
+        if (texture == "1") {
+            document.getElementById("imageid").src = textures[0][0];    // aqui va la imagen asociada con la textura 1
+            document.getElementById("imageid").alt = "1";
+        } else if (texture == "2") {
+            document.getElementById("imageid").src = textures[1][0];
+            document.getElementById("imageid").alt = "2";
+        } else if (texture == "3") {
+            document.getElementById("imageid").src = textures[2][0];
+            document.getElementById("imageid").alt = "3";
+        } else if (texture == "4") {
+            document.getElementById("imageid").src = textures[2][0];
+            document.getElementById("imageid").alt = "4";
+        } else if (texture == "5") {
+            document.getElementById("imageid").src = textures[2][0];
+            document.getElementById("imageid").alt = "5";
+        } else if (texture == "6") {
+            document.getElementById("imageid").src = textures[2][0];
+            document.getElementById("imageid").alt = "6";
+        } else if (texture == "7") {
+            document.getElementById("imageid").src = textures[2][0];
+            document.getElementById("imageid").alt = "7";
+        } else if (texture == "8") {
+            document.getElementById("imageid").src = textures[2][0];
+            document.getElementById("imageid").alt = "8";
+        } else if (texture == "9") {
+            document.getElementById("imageid").src = textures[2][0];
+            document.getElementById("imageid").alt = "9";
+        } else if (texture == "10") {
+            document.getElementById("imageid").src = textures[2][0];
+            document.getElementById("imageid").alt = "10";
+        } else if (texture == "11") {
+            document.getElementById("imageid").src = textures[2][0];
+            document.getElementById("imageid").alt = "11";
+        } else if (texture == "12") {
+            document.getElementById("imageid").src = textures[2][0];
+            document.getElementById("imageid").alt = "12";
+        } else {
+            document.getElementById("imageid").src = textures[2];
+            document.getElementById("imageid").alt = "unknown";
+        }
+    }
+</script>
+
+<!-- Scripts para hacer funcionar sketchfab y cambiar las texturas -->
+<script type=" text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.3.2.js"></script>
+<script type="text/javascript" src="./SketchfabConfigurator-1.0.6.js"></script>
+<script type="text/javascript">
+
+    var config = {
+        "model": "b13ebd70a84a46eea1f400fb77eab527",
+        "params": {
+            "camera": 0,
+            "preload": 1,
+            "ui_controls": 0,
+            "ui_infos": 0,
+            "ui_watermark": 0
+        },
+        // Aqui puedes agregar o quitar funciones/opciones (texturas, colores, toggles, etc)
+        "config": [
+
+            // Opcion 1. para cambiar las texturas
+            {
+                "name": "Texturas",
+                "material": "Material.001",
+                "channels": [
+                    "AlbedoPBR"
+                ],
+                "type": "texture",
+                "options": [
+                    { "name": textures[0][1], "url": textures[0][0], "texture": 1 },
+                    { "name": textures[1][1], "url": textures[1][0], "texture": 2 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 3 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 4 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 5 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 6 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 7 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 8 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 9 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 10 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 11 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 12 },
+                ],
+                "default": 0
+            },
+
+            // Opcion 2. para cambiar colores
+            {
+                "name": "Color",
+                "type": "color",
+                "material": "COLOR VARIABLE ",
+                "default": "#628cac"
+            },
+
+            // // Opcion 3. toggle
+            // {
+            //     "name": "Toggle",
+            //     "type": "visible",
+            //     "selector": "[instance=\"1652\"]",
+            //     "default": true
+            // },
+
+            // // Opcion 4. Select
+            // {
+            //     "name": "Select",
+            //     "type": "select",
+            //     "options": [],
+            //     "default": 0
+            // }
+
+        ]
+    };
+    var iframeEl = document.getElementById('api-frame');
+    var optionsEl = document.querySelector('.options');
+    var configurator = new SketchfabConfigurator.Configurator(iframeEl, optionsEl, config);
+</script>
+
+<!-- Time delay for loader -->
+<!-- <script>
+        // loader.style.display = 'none';
+        function doTimeout(ms) {
+            setTimeout(function () {
+                var ids = window.ids; //is non empty
+            }, ms);
+        }
+
+        function sleep(ms, callback) {
+            var start = new Date().getTime(), expire = start + ms;
+            while (new Date().getTime() < expire) { }
+            callback(ms);
+        }
+
+        function start() {
+            console.log("yoooo he")
+            sleep(3000, doTimeout);
+            console.log("timeees")
+            var loader = document.getElementById('loader-input');
+            loader.style.display = 'content';
+
+            // alert('myframe is loaded');
+        }; -->
+</script>
+
+</html>
