@@ -1,4 +1,40 @@
 <!DOCTYPE HTML>
+
+<!-- Zona de personalizacion -->
+<script type="text/javascript">
+    // Variables para el HTML
+    var business_name = "Ingevec";
+    var business_logo = "./Assets/Logo_ingevec_white.png";
+    var title_pers = "Pisos Ingevec";
+
+    // Variables para el viewer
+    // modelos actuales:
+    // Piso - f12eb4bb124d4d4faf9257b7c91c1742
+    // Vanitorio - b13ebd70a84a46eea1f400fb77eab527
+    var model = "f12eb4bb124d4d4faf9257b7c91c1742";
+
+    if (model == "b13ebd70a84a46eea1f400fb77eab527") {
+        // var textures = [["https://i.ibb.co/V372kjC/1001.jpg", "BD1001"], ["https://i.ibb.co/8bTcrfv/1003.jpg", "BD1003"], ["https://i.ibb.co/WkC8mS7/1006.jpg", "BD1006"], ["https://i.ibb.co/P9qFPhg/1012.jpg", "BD1012"], ["https://i.ibb.co/F7bPRj0/1016.jpg", "BD1016"], ["https://i.ibb.co/3mr9gL7/1018.jpg", "BD1018"], ["https://i.ibb.co/Dgh8WHt/1023.jpg", "BD1023"], ["https://i.ibb.co/FWpcDsS/1028.jpg", "BD1028"], ["https://i.ibb.co/w7Qfm9S/1029.jpg", "BD1029"]];
+        var textures = [["https://i.ibb.co/V372kjC/1001.jpg", "BD1001"], ["https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg", "BD1003"], ["https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "BD1006"]];
+        var material = "Material.007";
+
+        // change the actual image
+        document.getElementById("imageid").src = textures[0][0];    // aqui va la imagen asociada con la textura 1
+        document.getElementById("imageid").alt = "1";
+
+    } else if (model == "f12eb4bb124d4d4faf9257b7c91c1742") {
+        var textures = [["https://i.ibb.co/V372kjC/1001.jpg", "BD1001"], ["https://i.ibb.co/8bTcrfv/1003.jpg", "BD1003"], ["https://i.ibb.co/WkC8mS7/1006.jpg", "BD1006"], ["https://i.ibb.co/P9qFPhg/1012.jpg", "BD1012"], ["https://i.ibb.co/F7bPRj0/1016.jpg", "BD1016"], ["https://i.ibb.co/3mr9gL7/1018.jpg", "BD1018"], ["https://i.ibb.co/Dgh8WHt/1023.jpg", "BD1023"], ["https://i.ibb.co/FWpcDsS/1028.jpg", "BD1028"], ["https://i.ibb.co/w7Qfm9S/1029.jpg", "BD1029"]];
+        var material = "Material.001";
+
+        // change the actual image
+        document.getElementById("imageid").src = textures[0][0];    // aqui va la imagen asociada con la textura 1
+        document.getElementById("imageid").alt = "1";
+    }
+
+
+
+</script>
+
 <html>
 
 <head>
@@ -16,7 +52,7 @@
     <div id="preloader">
         <div class="loader-key">
             <div class="ux-text">
-                <h1 class="loader-h1">Bienvenido <span class="bold" id="business_name2"></span> 👋</h1>
+                <h1 class="loader-h1">Bienvenido <span class="bold" id="business_name"></span> 👋</h1>
                 <h2 class="loader-h2">Tu showroom personalizado está listo, aqui podras probar nuestros productos y
                     diseños en tu propio espacio</h2>
 
@@ -55,7 +91,7 @@
         <div class="viewer" alt="f12eb4bb124d4d4faf9257b7c91c1742">
             <div class="business">
                 <img class="logo" src="" alt="logo">
-                <h2 id="title-pers" class="title">TEST <span class="bold" id="business_name"></span></h2>
+                <h2 id="title-pers" class="title"><span class="bold" id="title-pers"></span></h2>
             </div>
 
             <iframe src="" id="api-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
@@ -124,27 +160,17 @@
 
 <!-- ------------------------------------------------------------------- -->
 
-<!-- Zona de personalizacion -->
-<script type="text/javascript">
-    // Variables para el HTML
-    var business_name = "Ingevec";
-    var business_logo = "./Assets/Logo_ingevec_white.png";
-
-    // Variables para el viewer
-    var model = "b13ebd70a84a46eea1f400fb77eab527";
-    var textures = [["https://i.ibb.co/qdNdhwW/Wood-Floor040-2-K-Color.jpg", "BD1001"], ["https://i.ibb.co/Rh0ksQs/Wood041-1-K-Color.jpg", "BD1003"], ["https://i.ibb.co/DGgKXgL/Wood-Floor011-2-K-Color.jpg", "BD1006"]];
-    var material = "Material.007";
-
+<!-- Loader key submit -->
+<script>
     // Funcion para agregar las variables al html
     (() => {
         document.getElementById("business_name").innerHTML = business_name;
         document.getElementById("business_name2").innerHTML = business_name;
         document.getElementById("loader-img-business").src = business_logo;
-    })();
-</script>
+        document.getElementById("title-pers").innerHTML = title_pers;
 
-<!-- Loader key submit -->
-<script>
+    })();
+
     function loaderSubmit() {
         var user_input = document.getElementById('key-input').value;
         // console.log(user_input)
@@ -180,7 +206,6 @@
 <!-- Funcion que cambia la imagen de referencia -->
 <script>
     function change_texture(texture) {
-        console.log(texture);
         if (texture == "1") {
             document.getElementById("imageid").src = textures[0][0];    // aqui va la imagen asociada con la textura 1
             document.getElementById("imageid").alt = "1";
@@ -191,22 +216,22 @@
             document.getElementById("imageid").src = textures[2][0];
             document.getElementById("imageid").alt = "3";
         } else if (texture == "4") {
-            document.getElementById("imageid").src = textures[2][0];
+            document.getElementById("imageid").src = textures[3][0];
             document.getElementById("imageid").alt = "4";
         } else if (texture == "5") {
-            document.getElementById("imageid").src = textures[2][0];
+            document.getElementById("imageid").src = textures[4][0];
             document.getElementById("imageid").alt = "5";
         } else if (texture == "6") {
-            document.getElementById("imageid").src = textures[2][0];
+            document.getElementById("imageid").src = textures[5][0];
             document.getElementById("imageid").alt = "6";
         } else if (texture == "7") {
-            document.getElementById("imageid").src = textures[2][0];
+            document.getElementById("imageid").src = textures[6][0];
             document.getElementById("imageid").alt = "7";
         } else if (texture == "8") {
-            document.getElementById("imageid").src = textures[2][0];
+            document.getElementById("imageid").src = textures[7][0];
             document.getElementById("imageid").alt = "8";
         } else if (texture == "9") {
-            document.getElementById("imageid").src = textures[2][0];
+            document.getElementById("imageid").src = textures[8][0];
             document.getElementById("imageid").alt = "9";
         } else if (texture == "10") {
             document.getElementById("imageid").src = textures[2][0];
@@ -229,8 +254,9 @@
 <script type="text/javascript" src="./SketchfabConfigurator-1.0.6.js"></script>
 <script type="text/javascript">
     var config = {
-        // "model": model,
-        "model": "f12eb4bb124d4d4faf9257b7c91c1742",
+        "model": model,
+        // "model": "b13ebd70a84a46eea1f400fb77eab527",
+        // "model": "f12eb4bb124d4d4faf9257b7c91c1742",
         "params": {
             "camera": 0,
             "preload": 1,
@@ -241,22 +267,51 @@
         "config": [
             {
                 "name": "Texture",
-                "material": "Material.001",
+                "material": material,
                 "channels": [
                     "AlbedoPBR"
                 ],
                 "type": "texture",
                 "options": [
-                    {
-                        "name": "test",
-                        "url": "testttt"
-                    },
                     { "name": textures[0][1], "url": textures[0][0], "texture": 1 },
                     { "name": textures[1][1], "url": textures[1][0], "texture": 2 },
                     { "name": textures[2][1], "url": textures[2][0], "texture": 3 },
+                    { "name": textures[3][1], "url": textures[3][0], "texture": 4 },
+                    { "name": textures[4][1], "url": textures[4][0], "texture": 5 },
+                    { "name": textures[5][1], "url": textures[5][0], "texture": 6 },
+                    { "name": textures[6][1], "url": textures[6][0], "texture": 7 },
+                    { "name": textures[7][1], "url": textures[7][0], "texture": 8 },
+                    { "name": textures[8][1], "url": textures[8][0], "texture": 9 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 10 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 11 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 12 },
                 ],
                 "default": 0
-            }
+            },
+
+            // // Opcion 2. para cambiar colores
+            // {
+            //     "name": "Color",
+            //     "type": "color",
+            //     "material": "COLOR VARIABLE ",
+            //     "default": "#628cac"
+            // },
+
+            // // Opcion 3. toggle
+            // {
+            //     "name": "Toggle",
+            //     "type": "visible",
+            //     "selector": "[instance=\"1652\"]",
+            //     "default": true
+            // },
+
+            // // Opcion 4. Select
+            // {
+            //     "name": "Select",
+            //     "type": "select",
+            //     "options": [],
+            //     "default": 0
+            // }
         ]
     };
     var iframeEl = document.getElementById('api-frame');
@@ -302,35 +357,32 @@
     //             "default": 0
     //         },
 
-    //         // Opcion 2. para cambiar colores
-    //         {
-    //             "name": "Color",
-    //             "type": "color",
-    //             "material": "COLOR VARIABLE ",
-    //             "default": "#628cac"
-    //         },
+            // // Opcion 2. para cambiar colores
+            // {
+            //     "name": "Color",
+            //     "type": "color",
+            //     "material": "COLOR VARIABLE ",
+            //     "default": "#628cac"
+            // },
 
-    //         // // Opcion 3. toggle
-    //         // {
-    //         //     "name": "Toggle",
-    //         //     "type": "visible",
-    //         //     "selector": "[instance=\"1652\"]",
-    //         //     "default": true
-    //         // },
+            // // // Opcion 3. toggle
+            // // {
+            // //     "name": "Toggle",
+            // //     "type": "visible",
+            // //     "selector": "[instance=\"1652\"]",
+            // //     "default": true
+            // // },
 
-    //         // // Opcion 4. Select
-    //         // {
-    //         //     "name": "Select",
-    //         //     "type": "select",
-    //         //     "options": [],
-    //         //     "default": 0
-    //         // }
+            // // // Opcion 4. Select
+            // // {
+            // //     "name": "Select",
+            // //     "type": "select",
+            // //     "options": [],
+            // //     "default": 0
+            // // }
 
     //     ]
     // };
-    var iframeEl = document.getElementById('api-frame');
-    var optionsEl = document.querySelector('.options');
-    var configurator = new SketchfabConfigurator.Configurator(iframeEl, optionsEl, config);
 </script>
 
 <!-- Time delay for loader -->
