@@ -229,7 +229,8 @@
 <script type="text/javascript" src="./SketchfabConfigurator-1.0.6.js"></script>
 <script type="text/javascript">
     var config = {
-        "model": "b13ebd70a84a46eea1f400fb77eab527",
+        // "model": model,
+        "model": "f12eb4bb124d4d4faf9257b7c91c1742",
         "params": {
             "camera": 0,
             "preload": 1,
@@ -240,7 +241,7 @@
         "config": [
             {
                 "name": "Texture",
-                "material": "Material.007",
+                "material": "Material.001",
                 "channels": [
                     "AlbedoPBR"
                 ],
@@ -261,70 +262,72 @@
     var iframeEl = document.getElementById('api-frame');
     var optionsEl = document.querySelector('.options');
     var configurator = new SketchfabConfigurator.Configurator(iframeEl, optionsEl, config);
-    var config = {
-        // Aqui puedes elegir el modelo 3d del cual se hace display
-        "model": model,
-        "params": {
-            "camera": 0,
-            "preload": 1,
-            "ui_controls": 0,
-            "ui_infos": 0,
-            "ui_watermark": 0
-        },
-        // Aqui puedes agregar o quitar funciones/opciones (texturas, colores, toggles, etc)
-        "config": [
 
-            // Opcion 1. para cambiar las texturas
-            {
-                "name": "Texturas",
-                "material": material,
-                "channels": [
-                    "AlbedoPBR"
-                ],
-                "type": "texture",
-                "options": [
-                    { "name": textures[0][1], "url": textures[0][0], "texture": 1 },
-                    { "name": textures[1][1], "url": textures[1][0], "texture": 2 },
-                    { "name": textures[2][1], "url": textures[2][0], "texture": 3 },
-                    { "name": textures[2][1], "url": textures[2][0], "texture": 4 },
-                    { "name": textures[2][1], "url": textures[2][0], "texture": 5 },
-                    { "name": textures[2][1], "url": textures[2][0], "texture": 6 },
-                    { "name": textures[2][1], "url": textures[2][0], "texture": 7 },
-                    { "name": textures[2][1], "url": textures[2][0], "texture": 8 },
-                    { "name": textures[2][1], "url": textures[2][0], "texture": 9 },
-                    { "name": textures[2][1], "url": textures[2][0], "texture": 10 },
-                    { "name": textures[2][1], "url": textures[2][0], "texture": 11 },
-                    { "name": textures[2][1], "url": textures[2][0], "texture": 12 },
-                ],
-                "default": 0
-            },
 
-            // Opcion 2. para cambiar colores
-            {
-                "name": "Color",
-                "type": "color",
-                "material": "COLOR VARIABLE ",
-                "default": "#628cac"
-            },
+    // var config = {
+    //     // Aqui puedes elegir el modelo 3d del cual se hace display
+    //     "model": model,
+    //     "params": {
+    //         "camera": 0,
+    //         "preload": 1,
+    //         "ui_controls": 0,
+    //         "ui_infos": 0,
+    //         "ui_watermark": 0
+    //     },
+    //     // Aqui puedes agregar o quitar funciones/opciones (texturas, colores, toggles, etc)
+    //     "config": [
 
-            // // Opcion 3. toggle
-            // {
-            //     "name": "Toggle",
-            //     "type": "visible",
-            //     "selector": "[instance=\"1652\"]",
-            //     "default": true
-            // },
+    //         // Opcion 1. para cambiar las texturas
+    //         {
+    //             "name": "Texturas",
+    //             "material": material,
+    //             "channels": [
+    //                 "AlbedoPBR"
+    //             ],
+    //             "type": "texture",
+    //             "options": [
+    //                 { "name": textures[0][1], "url": textures[0][0], "texture": 1 },
+    //                 { "name": textures[1][1], "url": textures[1][0], "texture": 2 },
+    //                 { "name": textures[2][1], "url": textures[2][0], "texture": 3 },
+    //                 { "name": textures[2][1], "url": textures[2][0], "texture": 4 },
+    //                 { "name": textures[2][1], "url": textures[2][0], "texture": 5 },
+    //                 { "name": textures[2][1], "url": textures[2][0], "texture": 6 },
+    //                 { "name": textures[2][1], "url": textures[2][0], "texture": 7 },
+    //                 { "name": textures[2][1], "url": textures[2][0], "texture": 8 },
+    //                 { "name": textures[2][1], "url": textures[2][0], "texture": 9 },
+    //                 { "name": textures[2][1], "url": textures[2][0], "texture": 10 },
+    //                 { "name": textures[2][1], "url": textures[2][0], "texture": 11 },
+    //                 { "name": textures[2][1], "url": textures[2][0], "texture": 12 },
+    //             ],
+    //             "default": 0
+    //         },
 
-            // // Opcion 4. Select
-            // {
-            //     "name": "Select",
-            //     "type": "select",
-            //     "options": [],
-            //     "default": 0
-            // }
+    //         // Opcion 2. para cambiar colores
+    //         {
+    //             "name": "Color",
+    //             "type": "color",
+    //             "material": "COLOR VARIABLE ",
+    //             "default": "#628cac"
+    //         },
 
-        ]
-    };
+    //         // // Opcion 3. toggle
+    //         // {
+    //         //     "name": "Toggle",
+    //         //     "type": "visible",
+    //         //     "selector": "[instance=\"1652\"]",
+    //         //     "default": true
+    //         // },
+
+    //         // // Opcion 4. Select
+    //         // {
+    //         //     "name": "Select",
+    //         //     "type": "select",
+    //         //     "options": [],
+    //         //     "default": 0
+    //         // }
+
+    //     ]
+    // };
     var iframeEl = document.getElementById('api-frame');
     var optionsEl = document.querySelector('.options');
     var configurator = new SketchfabConfigurator.Configurator(iframeEl, optionsEl, config);
