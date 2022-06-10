@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketchfab Configurator</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="app">
+        <iframe src="" id="api-frame" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="vr"
+            width="640" height="400"></iframe>
+        <div class="options"></div>
+    </div>
+</body>
+
+<script type="text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.3.2.js"></script>
+<script type="text/javascript" src="./SketchfabConfigurator-1.0.6.js"></script>
+<script type="text/javascript">
+    var config = {
+        "model": "b13ebd70a84a46eea1f400fb77eab527",
+        "params": {
+            "camera": 0,
+            "preload": 1,
+            "ui_controls": 0,
+            "ui_infos": 0,
+            "ui_watermark": 0
+        },
+        "config": [
+            {
+                "name": "Texture",
+                "material": "Material.007",
+                "channels": [
+                    "AlbedoPBR"
+                ],
+                "type": "texture",
+                "options": [
+                    {
+                        "name": "test",
+                        "url": "testttt"
+                    },
+                    { "name": textures[0][1], "url": textures[0][0], "texture": 1 },
+                    { "name": textures[1][1], "url": textures[1][0], "texture": 2 },
+                    { "name": textures[2][1], "url": textures[2][0], "texture": 3 },
+                ],
+                "default": 0
+            }
+        ]
+    };
+    var iframeEl = document.getElementById('api-frame');
+    var optionsEl = document.querySelector('.options');
+    var configurator = new SketchfabConfigurator.Configurator(iframeEl, optionsEl, config);
+</script>
+
+</html>
